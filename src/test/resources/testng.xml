@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test Suite" thread-count="3" parallel="tests">
+    <test name="Login Page">
+        <groups>
+            <run>
+                <include name="e2e"/>
+                <!--<include name="smoke"/>-->
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.UserLogin"></class>
+            <parameter name="url" value="https://www.saucedemo.com/"></parameter>
+            <parameter name="testDataFile" value="src/test/resources/TestData"></parameter>
+        </classes>
+    </test>
+</suite>
