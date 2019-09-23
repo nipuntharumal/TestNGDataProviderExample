@@ -96,7 +96,7 @@ public class UserLogin {
     public void should_not_be_allowed_with_invalid_user(DataAccess testData){
 
         loginPage.loginUser(testData.getUsername(),testData.getPassword());
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver,2);
         element = wait.until(ExpectedConditions.presenceOfElementLocated(loginPage.getLoginError()));
         Assert.assertTrue(loginPage.getLoginErrorMessage(element).contains(testData.getError()));
 
@@ -106,9 +106,8 @@ public class UserLogin {
     public void should_not_be_allowed_for_locked_out__user(DataAccess testData){
 
         loginPage.loginUser(testData.getUsername(),testData.getPassword());
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver,2);
         element = wait.until(ExpectedConditions.presenceOfElementLocated(loginPage.getLoginError()));
-        System.out.println("Error : "+loginPage.getLoginErrorMessage(element));
         Assert.assertTrue(loginPage.getLoginErrorMessage(element).contains(testData.getError()));
 
     }

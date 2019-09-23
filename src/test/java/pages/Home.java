@@ -8,7 +8,6 @@ public class Home {
 
     private WebDriver driver;
 
-    //private By welcomeLabel = By.xpath("//span[@class='welcome-msg ng-binding']");
     private By productsHomeLabel = By.xpath("//div[@class='product_label']");
 
     public Home(WebDriver driver){
